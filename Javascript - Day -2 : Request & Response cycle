@@ -1,0 +1,84 @@
+difference between Browser JS(console) v Nodejs
+
+Browser JS
+- Most of the time what you are doing is interacting with the DOM, or other Web Platform APIs like Cookies
+- The top-level scope is the global scope. That means that in browsers if you're in the global scope var something will define a global variable.
+- Browser environment, where you don’t get the luxury to choose what browser your visitors will use.
+- On the browser side, this of kind of direct execution of a JavaScript file and/or terminal REPL environment doesn’t work.
+- Browser we are starting to see the ES Modules standard being implemented
+
+Node JS
+- Those do not exist in Node.js. You don't have the document, window and all the other objects that are provided by the browser
+- The top-level scope is not the global scope; var something inside a Node module will be local to that module.
+- In Node.js you control the environment. Unless you are building an open source application that anyone can deploy anywhere, you know which version of Node you will run the application on.
+- You can call the file using node {file_path.js} or simply type in node and enter into an interactive REPL.
+- Node.js uses the CommonJS module system
+
+watch & summary 5 points - https://www.youtube.com/watch?v=SmE4OwHztCc&ab_channel=JSConf
+
+Parsing HTML
+HTML is a forgiving by nature
+Parsing isn’t straight forward
+Parsing stops when the execution hits script, link or style tags
+Link & style tags could stop JS execution as well
+CSS Parsing
+It will create CSSOM
+Render/Frame Tree
+DOM + CSSOM
+Combines two objects, Models, style resolution
+Not 1 to 1 mapping of HTML
+Non visual elements(head, script,title) are not in render tree
+Multiple trees
+Render Objects
+Render Styles
+Render Layers
+Line boxes
+Layouts
+Traversal render tree
+Paints
+Will take layed out render tree
+Creates layers
+Builds up over 12 phases
+
+Execute the below code
+
+Input
+const readline = require('readline');
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+ userInput.push(data);
+});
+inp.on("close", () => {
+
+//start-here
+console.log(typeof(1))
+console.log(typeof(1.1))
+console.log(typeof('1.1'))
+console.log(typeof(true))
+console.log(typeof(null))
+console.log(typeof(undefined))
+console.log(typeof([]))
+console.log(typeof({}))
+console.log(typeof(NaN))
+
+//end-here
+});
+
+Output:
+number
+number
+string
+boolean
+object
+undefined
+object
+object
+number
+ 
+Execution Time:
+0.072s
+Memory Used:
+8308kb
