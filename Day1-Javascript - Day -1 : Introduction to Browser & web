@@ -1,0 +1,10 @@
+HTTP 1.1
+• It uses text based commands for HTTP requests.
+• It added many performance enhancements e.g. caching, request pipelining, keepalive connections, transfer encoding, byte range requests etc.
+• It can load one request at a time. One request per one TCP connection is possible.
+HTTP 2
+• It is binary and not textual and completely multiplexed.
+• It interleaves multiple requests/responses in parallel without blocking on anyone.
+• It uses a single TCP connection to deliver multiple requests/responses (in parallel).
+• It uses header compression in order to reduce overhead.
+• It allows servers to "push" responses into client caches proactively.
