@@ -1,0 +1,336 @@
+Do the below programs in anonymous function & IIFE
+Print odd numbers in an array
+(function(){
+    var arr=[1,2,3,4,5,11];
+    var temp = "";
+    var temp1 = "";
+    for(let i=0; i<arr.length; i++)
+    {
+        if(arr[i]%2 === 0)
+        {
+            temp = temp + arr[i] + " ";
+        }
+        else
+        {
+            temp1= temp1 + arr[i] + " ";
+        }
+    }
+    console.log(temp1);
+})();
+
+Output:
+1 3 5 11
+
+Convert all the strings to title caps in a string array
+(function(){
+    let phrase = "how to learn javascript";
+    let temp = phrase.split(" ");
+    let OP = "";
+    for(i=0; i<temp.length; i++)
+    {
+        var capitalStr = temp[i].charAt(0).toUpperCase() + temp[i].slice(1);
+        OP = OP + capitalStr + " "; 
+    }
+    console.log(OP);
+})();
+
+Output:
+How To Learn Javascript 
+
+Sum of all numbers in an array
+(function(){
+    var arr=[1,2,3,4,5,11];
+    var temp = 0;
+    var temp1 = "";
+    for(let i=0; i<arr.length; i++)
+    {
+        {
+            temp = temp + arr[i];
+        }
+    }
+    console.log(temp);
+})();
+
+Output:
+26
+
+Return all the prime numbers in an array
+(function(){
+    var arr=[7,9,13,19,8,11,2,3];
+    var temp = "";
+    var temp1 = "";
+    for(let i=0; i<arr.length; i++)
+    {
+        if (arr[i] == 2 || arr[i] == 1 || arr[i] == 3)
+        {
+            temp1 = temp1 + arr[i] + " ";
+        }
+        else if(arr[i] != 2 && arr[i]%2 === 0)
+        {
+            
+        }
+        else
+        {
+            for (let j=3; j<arr[i]; j++)
+            {
+                if (arr[i] % j === 0)
+                {
+                  break;
+                }
+                temp = arr[i]
+            }
+            if (temp == arr[i-1])
+            {
+            }
+            else
+            {
+              temp1 = temp1 + temp + " ";
+            }
+        }
+    }
+    console.log(temp1);
+})();
+
+Output:
+7 13 19 11 2 3
+
+Return all the palindromes in an array
+(function(){
+    var arr=['go','lappal','lol'];
+    var temp = [];
+    var temp2 = "";
+    var OP = "";
+    //console.log(arr1.length);
+    for(let i=0; i<arr.length; i++)
+    {
+        let temp1 = arr[i];
+        //console.log(arr1[i].length)
+        for(let j=1; j<=temp1.length; j++)
+        {
+            temp[i] = temp1[temp1.length - j];
+            temp2 = temp2 + temp[i]
+        }
+        if (temp2 == temp1)
+        {
+            OP = OP + temp2 + " ";
+            temp2="";
+        }
+        else
+        {
+          temp2="";
+        }
+    }
+    console.log(OP);
+})();
+
+Output:
+lappal lol 
+
+Return median of two sorted arrays of same size
+(function(){
+  var arr=[2,1,5,4,3,11];
+  var arr1=[3,4,5,6,7];
+  var temparr = arr.concat(arr1);
+  var temp = "";
+  var median = 0;
+  var result = 0;
+  for(let i=0; i<temparr.length; i++)
+  {
+    for (let j=0; j<temparr.length; j++)
+    {
+      if (temparr[j] > temparr[j+1])
+      {
+          temp = temparr[j];
+          temparr[j] = temparr[j+1];
+          temparr[j+1] = temp;
+      }
+    }
+  }
+  console.log(temparr);
+  median = temparr.length
+  result = parseInt(median/2)
+  console.log(temparr[result]);
+})();
+
+Output:
+4
+
+Remove duplicates from an array
+(function(){
+  var arr=[2,1,3,4,3,2,11,11];
+  var temp = [];
+  var temp1 = "";
+  for(let i=0; i<arr.length; i++)
+  {
+    for (let j=i+1; j<arr.length; j++)
+    {
+      if (arr[i] == arr[j])
+      {
+        delete arr[j];
+      }
+    }
+  }
+  cleanArray = arr.filter(function () {
+    return true
+  });
+  console.log(cleanArray);
+})();
+
+Output:
+[2, 1, 3, 4, 11]
+
+Rotate an array by k times
+(function(x){
+    var arr=[1,2,3,4,5,11,12,25];
+    var temp = "";
+    var temp1 = "";
+    for(let j=0; j<x; j++)
+    {
+      temp = arr[0];
+        for(let i=1; i<=arr.length; i++)
+        {
+            arr[i-1] = arr[i];
+        }
+        arr[arr.length - 1] = temp;
+    }
+    console.log(arr);
+})(5);
+
+Output:
+[11, 12, 25, 1, 2, 3, 4, 5]
+
+Do the below programs in arrow functions
+Print odd numbers in an array
+var arr=[1,2,3,4,5,13];
+let x = (arr1) => {
+    var temp1 = "";
+    for(let i=0; i<arr1.length; i++)
+    {
+        if(arr1[i]%2 === 0)
+        {
+            
+        }
+        else
+        {
+            temp1= temp1 + arr[i] + " ";
+        }
+    }
+    return temp1;
+}
+var z = x(arr);
+console.log(z);
+
+Output:
+1 3 5 13 
+
+Convert all the strings to title caps in a string array
+let phrase = "how to learn javascript";
+let x = (strng) => {
+    let temp = strng.split(" ");
+    let OP = "";
+    for(i=0; i<temp.length; i++)
+    {
+        var capitalStr = temp[i].charAt(0).toUpperCase() + temp[i].slice(1);
+        OP = OP + capitalStr + " "; 
+    }
+    return OP;
+}
+var z = x(phrase);
+console.log(z);
+
+Output:
+How To Learn Javascript
+
+Sum of all numbers in an array
+var arr=[1,2,3,4,5,11];
+let x = (arr1) => {
+    var temp = 0;
+    for(let i=0; i<arr1.length; i++)
+    {
+        {
+            temp = temp + arr1[i];
+        }
+    }
+    return temp;
+}
+var z = x(arr);
+console.log(z);
+
+Output:
+26
+
+Return all the prime numbers in an array
+var arr=[7,9,13,19,8,11,2,3];
+let x = (arr1) =>{
+    var temp = "";
+    var temp1 = "";
+    for(let i=0; i<arr1.length; i++)
+    {
+        if (arr1[i] == 2 || arr1[i] == 1 || arr1[i] == 3)
+        {
+            temp1 = temp1 + arr[i] + " ";
+        }
+        else if(arr1[i] != 2 && arr1[i]%2 === 0)
+        {
+            
+        }
+        else
+        {
+            for (let j=3; j<arr1[i]; j++)
+            {
+                if (arr[i] % j === 0)
+                {
+                  break;
+                }
+                temp = arr1[i]
+            }
+            if (temp == arr1[i-1])
+            {
+            }
+            else
+            {
+              temp1 = temp1 + temp + " ";
+            }
+        }
+    }
+    return temp1;
+}
+var z = x(arr);
+console.log(z);
+
+Output:
+7 13 19 11 2 3
+
+Return all the palindromes in an array
+var arr=['go','lappal','lol'];
+let x = (arr1) => {
+    var temp = [];
+    var temp2 = "";
+    var OP = "";
+    //console.log(arr1.length);
+    for(let i=0; i<arr1.length; i++)
+    {
+        let temp1 = arr[i];
+        //console.log(arr1[i].length)
+        for(let j=1; j<=temp1.length; j++)
+        {
+            temp[i] = temp1[temp1.length - j];
+            temp2 = temp2 + temp[i]
+        }
+        if (temp2 == temp1)
+        {
+            OP = OP + temp2 + " ";
+            temp2="";
+        }
+        else
+        {
+          temp2="";
+        }
+    }
+    return OP;
+}
+var z = x(arr);
+console.log(z);
+
+Output:
+lappal lol 
